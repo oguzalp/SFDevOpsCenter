@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>60.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>B2B Einstein Recommendation</masterLabel>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property
+                name="recordId"
+                type="String"
+                label="Product or Category Id"
+                description=" AnchorValues = Product ID	A list of one or more 18-character product IDs. For example: 01t000000000000001, 01t000000000000002 
+                * Category ID A list of one or more 18-character category IDs. For example: 0ZG000000000000001, 0ZG000000000000002"
+                default="{!Product.Details.id}"
+            />
+            <property
+                name="productDataBinding"
+                type="String"
+                label="Product Data"
+                description="Product Data Binding"
+                default=""
+            />
+            <property
+                name="title"
+                type="String"
+                label="Recommendation Title (Headline)"
+                description="Title of the recommendation component, ex: Recently Viewed Products, Top Selling Products "
+                default=""
+            />
+            <property
+                name="recommender"
+                type="String"
+                label="Recommender Strategy"
+                datasource="RecentlyViewed,SimilarProducts,ComplementaryProducts,CustomersWhoBoughtAlsoBought,MostViewedByCategory,TopSellingByCategory,Upsell,PersonalizedForShopper,TopSelling"
+                description="Recommender Strategy"
+                default="RecentlyViewed"
+            />
+            <property
+                name="maxSize"
+                type="Integer"
+                label="Max amount of return product"
+                description="" 
+                default="10" 
+            />
+            <property
+                name="perPage"
+                type="Integer"
+                label="number of products per page"
+                description="number of products per page" 
+                default="4" 
+            />
+            <property
+                name="height"
+                type="String"
+                label="Component height"
+                description="height of the component as pixel" 
+                default="auto" 
+            />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>
