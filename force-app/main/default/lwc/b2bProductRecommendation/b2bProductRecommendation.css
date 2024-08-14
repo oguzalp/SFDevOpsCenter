@@ -1,0 +1,13 @@
+.container ul li img {
+  width: 18rem;
+  height: 18rem;
+  display: block;
+  object-fit: cover;
+}
+
+h1{
+  font-size: var(--dxp-s-text-heading-large-font-size);
+  font-family: var(--dxp-s-text-heading-large-font-family);
+  font-style: var(--dxp-s-text-heading-large-font-style);
+  font-weight: var(--dxp-s-text-heading-large-font-weight);
+}
