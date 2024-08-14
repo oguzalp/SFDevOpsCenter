@@ -1,0 +1,33 @@
+<template lwc:render-mode="light">
+  <h1 id="carousel-heading">{ header }</h1>
+  <template lwc:if={hasProducts}>
+    <section class="splide" aria-label={header}>
+      <div class="splide__track">
+        <ul class="splide__list">
+          <template for:each={einsteinProducts.products} for:item='prod' for:index="ind">
+            <li key={prod.id} class="splide__slide">
+              <div class="splide__slide__container">
+                <img data-id={prod.id} src={prod.defaultImage.url} />
+                <div class="prod_title"> <a class="recoTitle" data-id={prod.id} onclick={goToProductDetail}>
+                    {prod.name}</a> </div>
+                <template lwc:if={prod.prices}>
+                  <label class="prod_price">
+                    <lightning-formatted-number value={prod.prices.unitPrice} format-style="currency"
+                      currency-code={einsteinProducts.currencyIsoCode}></lightning-formatted-number>
+                  </label>
+                </template>
+              </div>
+            </li>
+          </template>
+        </ul>
+      </div>
+    </section>
+  </template>
+  <template lwc:else>
+    <div class="notFound">
+      <h2 id="reco_notfound_title">
+        Recommendation not found!
+      </h2>
+    </div>
+  </template>
+</template>
