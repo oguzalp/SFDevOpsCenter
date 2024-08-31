@@ -41,7 +41,7 @@ public inherited sharing class CommerceService {
             String endpoint = orgDomain + '/services/data/'+ API_VERSION+ '/commerce/webstores/'
                 + webstoreId
                 +'/ai/recommendations?language=en-US&recommender=' 
-                + recommender ; 
+                + recommender; 
 
             if (String.isNotBlank(anchorValues) && anchorValues.length() > 0) {
                 endpoint += '&anchorValues='+anchorValues;
